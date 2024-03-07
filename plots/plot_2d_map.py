@@ -41,7 +41,6 @@
 Takes in the following command line arguments:
     Flag    Flag (long)             Description
     _____   _____________________   ____________________________________________
-    -c      --controller            : Which controller to use ("CPG"/"REF")
     -n      --niches                : Number of niches (20 or 40)k
     -m      --map                   : Which map number to plot
 """
@@ -139,7 +138,7 @@ def load_data(filename, dim,dim_x):
     Args:
         filename: map file
         dim: number of dimensions (usually 6)
-        dim_x: number of parameters used for MAP-Elites (32=ref, 156=cpg)
+        dim_x: number of parameters used for MAP-Elites
 
     Returns:
         The fitness, descriptor and x value co-ordinates (not parameters!) for every controller in the map
@@ -227,16 +226,9 @@ if __name__ == "__main__":
 
     index = np.argmax(fit)
 
-    # manually adjust min/max fitness to normalize colouring
-    if False: 
-        min_fit = float(0)
-        if args.controller == "REF":
-            max_fit = float(2.5755269812861106) 
-        else:
-            max_fit = float(2.9220633991676346)
-    else:
-        min_fit = min(fit)
-        max_fit = max(fit)
+
+    min_fit = min(fit)
+    max_fit = max(fit)
     # print map details 
     print(f"""
 Fitness max:        {max(fit)}

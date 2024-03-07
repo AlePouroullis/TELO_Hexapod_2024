@@ -58,6 +58,7 @@ class Simulator:
 		
 		# connect a client to a pybullet physics server
 		if self.visualiser_enabled:
+
 			self.client = bc.BulletClient(connection_mode=p.GUI)
 			self.client.resetDebugVisualizerCamera(cameraDistance=self.camera_distance, cameraYaw=self.camera_yaw, cameraPitch=self.camera_pitch, cameraTargetPosition=self.camera_position)
 			self.client.configureDebugVisualizer(p.COV_ENABLE_GUI, False) # somestimes useful to turn on

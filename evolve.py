@@ -102,7 +102,7 @@ if __name__ == "__main__":
         2. file_number: A string or number used to uniquely identify output files.
 
     Example:
-        python -m DecoupledSUPG.evolve 100 01
+        python evolve.py 100 1
  
     Note:
         - The script assumes the presence of a properly configured NEAT configuration file.
