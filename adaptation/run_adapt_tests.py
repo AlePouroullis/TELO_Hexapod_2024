@@ -117,22 +117,23 @@ def save_results_for_boxplot(data, niche):
     print(f"Saved box plot data to {filepath}")
 
 if __name__ == "__main__":
-	import argparse
-	parser = argparse.ArgumentParser()
-	parser.add_argument("--show_visual", action="store_true", help="Show simulator visualization")
-	parser.add_argument("--niche", type=int, default=None, help="Specific niche to run experiments for. If not specified, will run for all niches (5k, 10k, 20k, 40k)")
-	args = parser.parse_args()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--show_visual", action="store_true", help="Show simulator visualization")
+    parser.add_argument("--niche", type=int, default=None, help="Specific niche to run experiments for. If not specified, will run for all niches (5k, 10k, 20k, 40k)")
+    parser.add_argument("--map_ids", type=int, nargs="+", default=None, help="Specific map IDs to run experiments for. If not specified, will run for all maps (1-20)")
+    args = parser.parse_args()
 
-	SHOW_VISUAL = args.show_visual
-	selected_niche = args.niche
-	# list from 1 to 20
-	map_ids = [i for i in range(1, 21)]
+    SHOW_VISUAL = args.show_visual
+    selected_niche = args.niche
+    # list from 1 to 20
+    map_ids = args.map_ids if args.map_ids else list(range(1, 21))
 
-	# Logic to iterate over maps for each niche
-	if selected_niche:
-		run_experiment_for_niche(selected_niche, map_ids,  show_visual=SHOW_VISUAL)
-	else:
-		for niche in niches:
-			run_experiment_for_niche(niche, map_ids, show_visual=SHOW_VISUAL)
+    # Logic to iterate over maps for each niche
+    if selected_niche:
+        run_experiment_for_niche(selected_niche, map_ids,  show_visual=SHOW_VISUAL)
+    else:
+        for niche in niches:
+            run_experiment_for_niche(niche, map_ids, show_visual=SHOW_VISUAL)
 
 	
