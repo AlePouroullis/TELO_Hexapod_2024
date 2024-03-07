@@ -78,7 +78,6 @@ This project is organized into various directories, each serving a specific purp
 
 This project structure facilitates a modular approach to robotic control and evolution, leveraging advanced algorithms like NEAT and MAP-Elites for optimizing and understanding robotic behaviors.
 
---- 
 ## Generating Maps
 ### Running MAP-Elites with HyperNEAT
 
