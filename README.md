@@ -22,6 +22,7 @@ This repository contains all the code necessary to replicate the adaptation expe
     - [QD-Map](#qd-map)
         - [How to Use the Script](#how-to-use-the-script)
         - [Customization](#customization-1)
+6. [Performance Videos](#performance-videos)
 
 ## Setup
 To get started, you must first create a virtual environment and install all the dependencies. This project uses an anaconda environment, which allows the environment to easily be replicated from an `environment.yml` file.
@@ -213,4 +214,6 @@ The script provided is designed to visualize the maps produced by the MAP-Elites
 
 This visualization tool is vital for analyzing the outcomes of the MAP-Elites algorithm, offering insights into the diversity and quality of solutions discovered during the evolutionary process.
 
-
+## Performance Videos
+The performance videos show the top-performing map (10k niches) being used in intelligent trial & error to adapt to different damage scenarios.
+Can be found [here](https://uctcloud-my.sharepoint.com/:f:/g/personal/prlale004_myuct_ac_za/ErCBRzFjp3JLiso2iqrQyG4B_rJtwYU2RVrJqPqAI6TyNQ?e=62QCxy). 
